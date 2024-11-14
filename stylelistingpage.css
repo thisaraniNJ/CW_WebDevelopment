@@ -1,0 +1,232 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+html{
+    scroll-behavior: smooth;
+    background-color: rgb(222, 229, 147);
+}
+header{
+    text-align: left;
+    margin-left: 1px;
+    margin-top:0;
+    padding: 0;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    left: 0;
+}
+
+#header{
+    font-size: 24px;
+    align-items: center;
+    overflow: hidden;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(233, 229, 163);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
+    position: sticky;
+}
+
+#header img{
+    margin-left: 10px;
+}
+
+#navbar{
+    justify-content: center;
+    display: flex;
+} 
+
+#navbar li{
+    display: inline;
+    margin: 0 10px;
+}
+
+#navbar li a{
+    display: inline-block;
+    color: white;
+    font-weight: 200;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.03s ease;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: rgb(6, 6, 0);
+}
+
+#navbar li a:hover:not(.active){
+    background-color: crimson;
+}
+
+#navbar li a:not(.active){
+    background-color: darkred;
+}
+
+h1{
+    text-align: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: maroon;
+    font-size: 1.6em;
+}
+#reviewsContainer {    
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin: 20px auto;
+    max-width: 1200px;
+    
+}
+.review {
+    background-color: #f2f1d3;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: calc(33.333% - 40px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+} 
+
+.stars {
+    color: #ffae00; 
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+.name{
+    font-weight: bold;
+    font-size: 1.1em;
+    color: #333;
+}
+.comment{
+    margin-top: 5px;
+    font-size: 1.0em;
+    color: #555;
+}
+.date{
+    margin-top: 4px;
+    font-style: italic;
+    color: #555;
+    font-size: 0.9em;
+    
+}
+
+#bottom {
+    text-align: center;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 23%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 18px;
+}
+
+button {
+    width: 6%;
+    padding: 7px;
+    background-color: #cde294;
+    color: black;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ebe5e5;
+}
+
+.containerfooter{
+	max-width: 1170px;
+	margin:auto;
+}
+.row{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.footer-col ul{
+	list-style: none;
+}
+
+.footer{
+	background-color: #dcd94d;
+    padding: 50px 0;
+}
+
+.footer-col{
+   width: 25%;
+   padding: 0 10px;
+   box-sizing: border-box;
+}
+.footer-col h4{
+	font-size: 18px;
+    display: flex;
+	color: #1e0101;
+	text-transform: capitalize;
+	margin-bottom: 15px;
+	font-weight: 800;
+	position: relative;
+}
+.footer-col h4::before{
+	content: '';
+	position: absolute;
+	left:0;
+	bottom: -8px;
+	background-color: #000000;
+	height: 2px;
+	box-sizing: border-box;
+	width: 60px;
+}
+.footer-col ul li:not(:last-child){
+	margin-bottom: 10px;
+}
+.footer-col ul li a{
+	font-size: 16px;
+	text-transform: capitalize;
+	color: #120567;
+	text-decoration: none;
+	font-weight: 300;
+	color: #130066;
+	display: flex;
+	transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+	color: #106886;
+	padding-left: 6px;
+}
+.footer-col .social-links a{
+	display: inline-block;
+	height: 40px;
+	width: 40px;
+	background-color: rgba(255,255,255,0.2);
+	margin:0 10px 10px 0;
+	text-align: center;
+	line-height: 40px;
+	border-radius: 50%;
+	color: #c10808;
+	transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+	color: #24262b;
+	background-color: #ffffff;
+}
+
+.backgroundChange {   
+    margin: 20px 0;
+}
+
+.Color {
+    margin-bottom: 2px;
+}
+
+label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+select {
+    padding: 5px;
+    border-radius: 5px;
+}

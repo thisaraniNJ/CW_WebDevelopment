@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>    
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylelistingpage.css">
+</head>
+<body>
+    <header>
+        <section id="header">
+            <img src="images\logo.jpg" width="80px" height="80px" alt="logo">
+            <h2>BuyAnything.com</h2>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="buyproduct.html">Shop</a></li>
+                    <li><a href="listingPage.html" class="active">Reviews</a></li>
+                    <li><a href="Query.html">Query</a></li>
+                    <li><a href="Quiz.html">Quiz</a></li>
+                   <li><a href="gallerypg.html">Gallery</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li><a href="signinpg.html"><i class="fa fa-user-o"></i><span> SignIn</span></a></li>
+                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i><span> Cart</span></a></li>
+                </ul>
+            </div>
+        </section>
+    </header>    
+        
+    <div class="backgroundChange">
+        <div class="Color">
+            <label for="bgColor">Background Color :</label>
+            <select id="bgColor">
+                <option value="pink">Pink</option>
+                <option value="orange">Orange</option>
+                <option value="lightblue">Light Blue</option>
+                <option value="white">White</option>                        
+            </select>
+        </div>
+
+        <div class="Color">
+            <label for="textColor">Text Color :</label>
+            <select id="text-color">
+                <option value="brown">Brown</option>
+                <option value="purple">Purple</option>
+                <option value="blue">Blue</option>
+                <option value="green">Green</option>            
+            </select>
+        </div>
+    </div>
+    
+    <h1 id="title">Customer Reviews</h1>
+    
+    <div id="reviewsContainer"></div>    
+
+    <script src="JavaScriptTharinsa.js"></script>
+
+    <div id="bottom">
+        <form onsubmit="return emailFieldValidate()">
+            <div class="SubForm">
+                <br><br>
+                <h2>Subscribe to Our Personalized Newsletter</h2>
+                <label for="fname">Full Name:</label>
+                <input type="text" name="firstame" id="fname" placeholder="First Name" size="40">
+                <br><br>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" size="44" placeholder="Email Address">
+                <br><br>
+                <button type="submit">Subscribe</button>
+                <button type="reset">Clear All</button>
+                <br><br><br><br>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function emailFieldValidate() {
+            var name_field = document.getElementById('fname').value;
+            var email_field = document.getElementById('email');
+            if (email_field.value === '' || name_field.value ==='') {
+                alert('Please fill in all the fields of the form');
+                return false;
+            } else {
+                alert('Dear ' + name_field + ', you have successfully subscribed for a personalized newsletter');
+                return true;
+            }
+        }
+
+        document.getElementById('bgColor').addEventListener('change', function() {
+            document.body.style.backgroundColor = this.value;
+        });
+
+        document.getElementById('text-color').addEventListener('change', function() {
+            const selectedColor = this.value;
+    
+            document.querySelectorAll('#title, .backgroundChange .Color, .review .name, .review .comment, .review .date, #bottom, #bottom label, #bottom button, #bottom h2').forEach(element => {
+                element.style.color = selectedColor;
+            });
+
+    
+            document.querySelectorAll('#bottom button').forEach(button => {
+                button.style.color = selectedColor;
+            });
+    
+            
+        });
+
+    </script>
+
+    <footer class="footer" style="text-align: center;">
+        
+        <div class="containerfooter">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="About Us.html">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="womenitems.html">Women's Clothes</a></li>
+                        <li><a href="menitems.html">Men's Clothes</a></li>
+                        <li><a href="footwearitems.html">Footwear</a></li>
+                        <li><a href="cosmeticitems.html">Cosmetics</a></li>
+                        <li><a href="accessoryitems.html">Accessories</a></li>                    
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
+                        <a href="#"><i class="fa fa-twitter"></i><span class="sr-only">Twitter</span></a>
+                        <a href="#"><i class="fa fa-instagram"><span class="sr-only">Instagram</span></i></a>
+                
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 AI Application. All rights reserved.</p>
+        <p style="font-size: 1.1em;"><b>Author:</b> Tharinsa Mudalige</p>
+        <p style="font-size: 0.9em;"><a href="pageEditorTharinsa.html" target="_blank">Page Editor</a></p>
+    </footer>
+</body>
+</html>

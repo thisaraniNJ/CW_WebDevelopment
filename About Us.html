@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="styleEhansa2.css">
+
+    <style>
+        .our-pics {
+    display: flex;
+    flex-direction: row; 
+    gap: 30px;
+    margin-bottom: 15px;
+    justify-content: center; 
+}
+
+
+        .our-pic {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .our-pic img {
+    width: 170px;
+    height: 200px;
+    transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+}
+
+    .our-pic img:hover {
+    transform: scale(1.1);
+    border: 10px solid rgb(222, 229, 147);
+}
+
+    .our-pic div {
+    display: none;
+    margin-top: 30px;
+}
+
+    .our-pic:hover div {
+    display: block;
+}
+
+
+    .images {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+    .increaseDecreaseFontsize {
+            text-align: center;
+            margin: 20px;
+        }
+
+    .increaseDecreaseFontsize button {
+            padding: 10px 20px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            background-color: #4CAF50;
+            color: black;
+            cursor: pointer;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+
+    .increaseDecreaseFontsize button:hover {
+            background-color: #5aa471;
+        }
+
+    .increaseDecreaseFontsize button.clicked {
+            transform: scale(1.2);
+        }
+
+</style>
+
+</head>
+<body>
+   
+    <header>
+        <section id="header">
+            <img src="images\logo.jpg" width="80px" height="80px" alt="logo">
+            <h2>BuyAnything.com</h2>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="buyproduct.html">Shop</a></li>
+                    <li><a href="listingPage.html">Reviews</a></li>
+                    <li><a href="Query.html">Query</a></li>
+                    <li><a href="Quiz.html">Quiz</a></li>
+                    <li><a href="gallerypg.html">Gallery</a></li>
+                    <li><a href="About Us.html" class="active">About Us</a></li>
+                    <li><a href="signinpg.html"><i class="fa fa-user-o"></i><span> SignIn</span></a></li>
+                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i><span> Cart</span></a></li>
+                </ul>
+            </div>
+        </section>
+    </header>    
+       <br>
+       <hr>
+       <br>
+    <div id="initial-message">
+        <h2>Hi! Hope you are enjoying your shopping spree! Hover over our images to get to know us!</h2>
+    </div>
+
+    <br><br>
+    <div class="images">
+    
+    <div class="our-pics">
+        <div class="our-pic">
+            <img src="images/AaqibAboutUs.jpg" alt="Aaqib">
+            <div class="aH">Aaqib Rilwan, Student 1</div>
+        </div>
+        <div class="our-pic">
+            <img src="images/ThisaraniAboutUs.jpg" alt="Thisarani">
+            <div class="ThiH">Thisarani Jayaweera, Student 2</div>
+        </div>
+    </div>
+    </div>
+    <div class="images">
+    <div class="our-pics">
+        <div class="our-pic">
+            <img src="images/EhansaAboutUs.jpg" alt="Ehansa">
+            <div class="eH">Ehansa Gajanayaka, Student 3</div>
+        </div>
+        <div class="our-pic">
+            <img src="images/TharinsaAboutUs.jpg" alt="Tharinsa">
+            <div class="ThaH">Tharinsa Mudalige, Student 4</div>
+        </div>
+    </div>
+    </div>
+
+    <div class="increaseDecreaseFontsize">
+        <button id="increaseFontSize">Increase Font Size</button>
+        <button id="mediumFontSize">Medium Font Size</button>
+        <button id="decreaseFontSize">Decrease Font Size</button>
+    </div>
+
+    <script>
+        document.getElementById('increaseFontSize').addEventListener('click', function() {
+            adjustFontSize('increase');
+            this.classList.add('clicked');
+            document.getElementById('decreaseFontSize').classList.remove('clicked');
+            document.getElementById('mediumFontSize').classList.remove('clicked');
+        });
+
+        document.getElementById('mediumFontSize').addEventListener('click', function() {
+            adjustFontSize('medium');
+            this.classList.add('clicked');
+            document.getElementById('increaseFontSize').classList.remove('clicked');
+            document.getElementById('decreaseFontSize').classList.remove('clicked');
+        });
+
+        document.getElementById('decreaseFontSize').addEventListener('click', function() {
+            adjustFontSize('decrease');
+            this.classList.add('clicked');
+            document.getElementById('increaseFontSize').classList.remove('clicked');
+            document.getElementById('mediumFontSize').classList.remove('clicked');
+        });
+
+        function adjustFontSize(action) {
+            const divs = document.querySelectorAll('.our-pic div');
+            divs.forEach(div => {
+                if (action === 'increase') {
+                    div.style.fontSize = 'xx-large';
+                } else if (action === 'medium') {
+                    div.style.fontSize = 'medium';
+                } else if (action === 'decrease') {
+                    div.style.fontSize = 'x-small';
+                }
+            });
+        }
+    </script>
+
+    <br>
+       <br>
+       <footer class="footer" style="text-align: center;">
+        
+        <div class="containerfooter">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="About Us.html">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="womenitems.html">Women's Clothes</a></li>
+                        <li><a href="menitems.html">Men's Clothes</a></li>
+                        <li><a href="footwearitems.html">Footwear</a></li>
+                        <li><a href="cosmeticitems.html">Cosmetics</a></li>
+                        <li><a href="accessoryitems.html">Accessories</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
+                        <a href="#"><i class="fa fa-twitter"></i><span class="sr-only">Twitter</span></a>
+                        <a href="#"><i class="fa fa-instagram"><span class="sr-only">Instagram</span></i></a>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 AI Application. All rights reserved.</p>
+        <a href="editorEhansa.html" target="_blank">Editor's Page</a>
+    </footer>
+
+
+   
+</body>
+</html>
+

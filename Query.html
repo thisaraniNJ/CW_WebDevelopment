@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Query Page</title>
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="stylethisarani.css">
+
+        <style>
+            #query {
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-bottom: 30px;
+            background-attachment: fixed;
+            }
+
+            .container {
+            width: 50%;
+            margin: 0 auto;
+            padding: 20px;
+            border: 5px solid rgb(96, 170, 17);
+            border-radius: 5px;
+            background-color: rgb(254, 252, 240);
+            }
+
+            label {
+            display: block;
+            margin-bottom: 8px;
+            color: rgb(7, 9, 1);
+            font-weight: 800;
+            font-size: 18px;
+            }
+
+            textarea,select,input{
+                width: 650px;
+                height: 30px;
+                border-radius: 10px;
+                border: 2px solid darkgoldenrod;
+            }
+
+            textarea{
+                height: 70px;
+            }
+
+            button {
+                padding: 10px 20px;
+                background-color: black;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            button:hover {
+                background-color: rgb(42, 78, 6);
+            }
+
+            .swindow {
+                display: none;
+                position: fixed;
+                z-index: 1;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                overflow: auto;
+                background-color: rgb(0, 0, 0);
+                background-color: rgba(0, 0, 0, 0.4);
+                padding-top: 60px;
+            }
+
+            .content {
+                background-color: whitesmoke;
+                margin: 5% auto;
+                padding: 20px;
+                border: 1px solid black;
+                width: 50%;
+                border-radius: 10px;
+            }
+
+            .close {
+                color: black;
+                float: right;
+                font-size: 28px;
+                font-weight: bold;
+            }
+
+            .close:hover,
+            .close:focus {
+                color: darkgoldenrod;
+                text-decoration: none;
+                cursor: pointer;
+            }
+
+            form h2{
+                text-align: center;
+                font-size: 24px;
+                color: darkgreen;
+            }
+
+        </style>
+    </head>
+    <body> 
+        <header>
+            <section id="header">
+                <img src="images\logo.jpg" width="80px" height="80px" alt="logo">
+                <h2>BuyAnything.com</h2>
+                <div>
+                    <ul id="navbar">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="buyproduct.html">Shop</a></li>
+                        <li><a href="listingPage.html">Reviews</a></li>
+                        <li><a href="Query.html" class="active">Query</a></li>
+                        <li><a href="Quiz.html">Quiz</a></li>
+                        <li><a href="gallerypg.html">Gallery</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li><a href="signinpg.html"><i class="fa fa-user-o"></i><span> SignIn</span></a></li>
+                        <li><a href="cart.html"><i class="fa fa-shopping-cart"></i><span> Cart</span></a></li>
+                    </ul>
+                </div>
+            </section>
+        </header>    
+        <br><hr>
+
+        <h1>To all of your questions we have answers... Therefore fill this to get a valid answer !!!</h1>
+        
+        <div class="container">
+
+            <form id="query" onsubmit="return submitForm()" method="post">
+
+                <h2>Query Form</h2>
+
+                <fieldset>
+
+                    <legend>Fill this to get help from us !!</legend>
+    
+                    <div class="input">
+                        <label for="name">Name : </label>
+                        <input type="text" id="name" name="name">
+                        
+                    </div>
+                    <br><br>
+    
+                    <div class="input">
+                        <label for="email">e-mail : </label>
+                        <input type="text" id="email" name="email">
+                        
+                    </div>
+                    <br><br>
+    
+                    <div class="input">
+                        <label for="subject">Subject : </label>
+                        <select id="subject" name="subject">
+                            <option value="" disabled selected>Select a subject</option>
+                            <option value="delivery">Delivery</option>
+                            <option value="general">General</option>
+                            <option value="technical">Technical</option>
+                            <option value="payment">Payment</option>
+                        </select>
+                    </div>
+                    <br><br>
+    
+                    <div class="input">
+                        <label for="details">Details : </label>
+                        <textarea id="details" name="details" placeholder="Write what's on your mind..."></textarea>
+                        
+                    </div>
+                    <br><br>
+    
+                    <button type="submit">Submit</button>
+                    <button type="reset">Clear</button>
+
+                </fieldset>
+            </form>
+        </div>
+    
+        <div id="summary" class="swindow">
+            <div class="content">
+                <span class="close" onclick="closeWindow()">&times;</span>
+                <h2>Summary Of The Form</h2>
+                <p id="swindowSummary"></p>
+            </div>
+        </div>
+
+        <script>
+
+            function submitForm(){
+                const name = document.getElementById('name').value.trim();
+                const email = document.getElementById('email').value.trim();
+                const subject = document.getElementById('subject').value.trim();
+                const details = document.getElementById('details').value.trim();
+            
+
+                if (!name || !email || !subject || !details){
+                    alert('Please fill all the fields.');
+                    return false;
+                }
+
+                // name validation (only lettes and spaces are allowed.)
+                const nameRange= /^[a-zA-Z\s]+$/;
+                if (!nameRange.test(name)){
+                    alert('Invalid name. Only letters and spaces are allowed.');
+                    return false;
+                }
+
+                // email validation
+                const emailRange= /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRange.test(email)){
+                    alert('Invalid email format.');
+                    return false;
+                }
+
+                //details validation
+                if (details.length < 10) {
+                    alert('Details must be at least 10 characters long.');
+                    return false;
+                }
+
+                if (details.length > 1000) {
+                    alert('Details must not exceed 1000 characters.');
+                    return false;
+                }
+
+                if (!details.trim().length) {
+                    alert('Details cannot be just spaces.');
+                    return false;
+                }
+
+                const summary =
+                    "<p><strong>Name : </strong>" + name + "</p>" +
+                    "<p><strong>Email : </strong>" + email + "</p>" +
+                    "<p><strong>Subject : </strong>" + subject + "</p>" +
+                    "<p><strong>Details : </strong>" + details + "</p>";
+                
+                
+                document.getElementById('swindowSummary').innerHTML = summary;
+                document.getElementById('summary').style.display = 'block';
+                document.getElementById('query').reset();
+                return false;
+            }
+
+            function closeWindow(){
+                document.getElementById('summary').style.display='none';
+            }
+
+            window.onclick=function(event){
+                const swindow = document.getElementById('summary');
+                if (event.target == swindow){
+                    swindow.style.display = 'none';
+                }
+            }
+
+        </script>
+
+<br>
+       <br>
+       <footer class="footer" style="text-align: center;">
+        
+        <div class="containerfooter">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="About Us.html">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="womenitems.html">Women's Clothes</a></li>
+                        <li><a href="menitems.html">Men's Clothes</a></li>
+                        <li><a href="footwearitems.html">Footwear</a></li>
+                        <li><a href="cosmeticitems.html">Cosmetics</a></li>
+                        <li><a href="accessoryitems.html">Accessories</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
+                        <a href="#"><i class="fa fa-twitter"></i><span class="sr-only">Twitter</span></a>
+                        <a href="#"><i class="fa fa-instagram"><span class="sr-only">Instagram</span></i></a>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 AI Application. All rights reserved.</p>
+        <a href="editorthisarani.html" target="_blank">Editor's Page</a>
+    </footer>
+
+    </body>
+</html>

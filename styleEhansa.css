@@ -1,0 +1,371 @@
+
+
+h1 {
+    font-size: 50px;
+    line-height: 64px;
+    color: #222;
+}
+
+
+
+h4 {
+    font-size: 20px;
+    color: #222;
+}
+
+h6 {
+    font-weight: 700;
+    font-size: 12px;
+}
+
+p {
+    font-size: 16px;
+    color: #465b52;
+    margin: 15px 0 20px 0;
+}
+
+.section-p1 {
+    padding: 40px 80px;
+}
+
+.section-m2 {
+    margin: 40px 0;
+}
+
+.body {
+    width: 100%;
+}
+
+
+
+.button {
+    background-color: #04AA6D;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.product1 {
+    text-align: center;
+}
+
+.product1 .pro-container {
+    display: flex;
+    justify-content: center; 
+    padding-top: 20px;
+    flex-wrap: wrap;
+}
+
+.product1 .pro {
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #000000;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px;
+    transition: 0.2s ease;
+    position: relative;
+    background-color: rgb(248, 248, 247);
+    
+}
+
+.product1 .pro:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+}
+
+.product1 .pro img {
+    width: 100%;
+    border-radius: 20px;
+}
+
+.product1 .pro .des {
+    text-align: start;
+    padding: 10px 0;
+}
+
+.product1 .pro .des span {
+    color: #606063;
+    font-size: 12px;
+}
+
+.product1 .pro .des h5 {
+    padding-top: 7px;
+    color: #1a1a1a;
+    font-size: 14px;
+}
+
+.product1 .pro .des i {
+    font-size: 12px;
+    color: rgb(243, 181, 25);
+}
+
+.product1 .pro .des h4 {
+    padding-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+    color: rgb(57, 52, 52);
+}
+
+.product1 .pro .cart {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50px;
+    background-color: #e8f6ea;
+    color: #088178;
+    border: 1px solid #cce7d0;
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+#prodetails {
+    display: flex;
+    margin-top: 20px;
+}
+
+#prodetails .single-pro-image {
+    width: 40%;
+    margin-right: 50px;
+}
+
+#prodetails #MainImg{
+    width:80%;
+}
+
+.small-img-group {
+    display: flex;
+    justify-content: space-between;
+}
+
+.small-img-col {
+    flex-basis: 24%;
+    cursor: pointer;
+}
+
+#prodetails .single-pro-details {
+    width: 50%;
+    padding-top: 30px;
+}
+
+#prodetails .single-pro-details h4 {
+    padding: 40px 0 20px 0;
+}
+
+#prodetails .single-pro-details h2 {
+    font-size: 26px;
+}
+
+#prodetails .single-pro-details select {
+    display: block;
+    padding: 5px 10px;
+    margin-bottom: 10px;
+}
+
+#prodetails .single-pro-details input {
+    width: 50px;
+    height: 47px;
+    padding-left: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+#prodetails .single-pro-details input:focus {
+    outline: none;
+}
+
+#prodetails .single-pro-details button {
+    background-color: #088178;
+    color: #fff;
+}
+
+#prodetails .single-pro-details span {
+    line-height: 25px;
+}
+
+#gotoTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+#gotoTopButton {
+    background-color: #000; 
+    color: #fff; 
+    border: none;
+    border-radius: 50px; 
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#gotoTopButton:hover {
+    background-color: #555; 
+    transform: scale(1.1); 
+}
+
+#gotoTopButton a {
+    color: inherit; 
+    text-decoration: none; 
+}
+
+
+.modal {
+    display: none;
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeIn 0.5s;
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* The Close Button */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.title,
+.total {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+
+.total {
+    margin-top: 20px;
+}
+
+
+#cartTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    border: 2px solid #ddd;
+}
+
+#cartTable th,
+#cartTable td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+#cartTable th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+
+.button-group {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 10px;
+}
+
+
+#proceedToCart,
+#continueShopping {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px 0;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    cursor: pointer;
+    text-align: center;
+}
+
+#proceedToCart:hover,
+#continueShopping:hover {
+    background-color: #45a049;
+}
+
+.mainpics {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px; 
+}
+
+.mainpic {
+    text-align: center; 
+    margin: 10px;
+}
+
+.mainpic a {
+    display: block; 
+    position: relative; 
+}
+
+.mainpic img {
+    width: 180px; 
+    height: auto; 
+    border: 2px solid #ccc; 
+    border-radius: 10px; 
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.mainpic .inside-image {
+    margin-top: 10px; 
+    font-size: 14px; 
+    color: #333; 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    background-color: rgba(255, 255, 255, 0.8); 
+    padding: 8px 0; 
+    opacity: 0; 
+    transition: opacity 0.3s ease; 
+}
+
+.mainpic:hover .inside-image, .mainpic:active .inside-image {
+    opacity: 1; 
+}

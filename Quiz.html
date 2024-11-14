@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz Page</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="stylethisarani.css">
+
+        <style>
+            .quiz{
+                margin-top: 20px;
+                text-align:center ;
+    
+
+            }
+            .result{
+                margin-top: 20px;
+                text-align: center;
+            }
+
+            .selection{
+                text-align: center;
+                color: black;
+                text-decoration: double;
+            }
+
+            select{
+                font-size: 28px;
+                color: darkred;
+            }
+
+            button{
+                font-size: 36px;
+                background-color: rgb(239, 224, 125);
+                border-radius: 10px;
+            }
+
+            #result{
+                color: darkred;
+            }
+         
+        </style>
+    </head>
+
+    <body>
+
+        <header>
+            <section id="header">
+                <img src="images\logo.jpg" width="80px" height="80px" alt="logo">
+                <h2>BuyAnything.com</h2>
+                <div>
+                    <ul id="navbar">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="buyproduct.html">Shop</a></li>
+                        <li><a href="listingPage.html">Reviews</a></li>
+                        <li><a href="Query.html">Query</a></li>
+                        <li><a href="Quiz.html" class="active">Quiz</a></li>
+                        <li><a href="gallerypg.html">Gallery</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li><a href="signinpg.html"><i class="fa fa-user-o"></i><span> SignIn</span></a></li>
+                        <li><a href="cart.html"><i class="fa fa-shopping-cart"></i><span> Cart</span></a></li>
+                    </ul>
+                </div>
+            </section>
+        </header>    
+       <br>
+       <hr>
+       <h1 style="text-align: center; font-family: comic sans-serif; color: rgb(244, 244, 144);background-color:darkred;">Quizzes are Rewards!! Give it a try...</h1>
+       <h1 style="text-align: center; color: darkslategray;">You have only one chance to attempt the questions !!!</h1>
+        <br>
+        <div class="selection">
+        <label for="topic">Choose your favourite topic to answer: </label>
+        <br><br>
+        <select id="topic">
+            <option value="maths">Maths</option>
+            <option value="gk">General Knowledge</option>
+            <option value="history">History</option>
+            <option value="science">Science</option>
+        </select>
+        </div>
+        <br>
+        <div class="quiz">
+            <button id="startButton" onclick="startQuiz()">Start Quiz</button>
+            <div class="result" id="result"></div>
+        </div>
+        <br><br>
+
+        <script>
+            const quizzes={
+                maths:[
+                    {quiz: "Square root of 625?", answer:"25"},
+                    {quiz: "What is 1050+650", answer:"1700"},
+                    {quiz: "I am an odd number. Take away one letter and I become even. What number am I?", answer:"7"},
+                    {quiz: "Sally is 54 years old and her mother is 80, how many years ago was Sally’s mother times her age?", answer:"41"},
+                    {quiz:"Which 3 numbers have the same answer whether they’re added or multiplied together?", answer:"1,2,3"}
+                ],
+
+                gk:[
+                    {quiz:"Which animal is known as the 'Ship of the Desert?", answer:"Camel"},
+                    {quiz:"What gas do humans inhale when they breathe in?", answer:"Oxygen"},
+                    {quiz:"Who authored “The Adventures of Tom Sawyer”?",answer:"Mark Twain"},
+                    {quiz:"What flower is England’s national emblem?",answer:"Rose"},
+                    {quiz:"Which month is the shortest in a year?",answer:"February"}
+                ],
+
+                history:[
+                    {quiz:"In which year did the First World War end?",answer:"1918"},
+                    {quiz:"Who invented the telephone?",answer:"Alexander Graham Bell"},
+                    {quiz:"Who was the first woman to win a Nobel Prize?",answer:"Marie Cure"},
+                    {quiz:"Who was the first Western explorer to reach China?",answer:"Marco Polo"},
+                    {quiz:"In which city would you find the world-famous Colosseum?",answer:"Rome"}
+                ],
+
+                science:[
+                    {quiz:"What is the largest organ in the human body?",answer:"The skin"},
+                    {quiz:"True or false: Salt dissolves in water.",answer:"True"},
+                    {quiz:"Which planet has the most moons?",answer:"Jupiter"},
+                    {quiz:"What is the force that pulls objects towards the center of the Earth?",answer:"Gravity"},
+                    {quiz:"What is the outermost layer of the Earth called?",answer:"The crust"}
+                ],
+                
+            };
+
+            
+            function startQuiz(){
+                
+                const startButton = document.getElementById('startButton');
+                startButton.disabled=true;
+
+                const topics = document.getElementById("topic").value;
+                const selectedQuizzes = quizzes[topics];
+                let score=0;
+
+                for (let i=0;i<selectedQuizzes.length;i++){
+                    const userAnswer = prompt(selectedQuizzes[i].quiz);
+                    if (userAnswer===selectedQuizzes[i].answer){
+                        score += 2;
+                    }else{
+                        score -= 1;
+                    }
+                }
+                document.getElementById("result").innerText="You have earned " +score+ " points. Please claim the points in your next purchase.";
+                
+
+            }
+        </script>
+
+       <br>
+       <br>
+       <hr>
+       
+       <footer class="footer" style="text-align: center;">
+        
+        <div class="containerfooter">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="About Us.html">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="womenitems.html">Women's Clothes</a></li>
+                        <li><a href="menitems.html">Men's Clothes</a></li>
+                        <li><a href="footwearitems.html">Footwear</a></li>
+                        <li><a href="cosmeticitems.html">Cosmetics</a></li>
+                        <li><a href="accessoryitems.html">Accessories</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
+                        <a href="#"><i class="fa fa-twitter"></i><span class="sr-only">Twitter</span></a>
+                        <a href="#"><i class="fa fa-instagram"><span class="sr-only">Instagram</span></i></a>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 AI Application. All rights reserved.</p>
+        <a href="editorthisarani.html" target="_blank">Editor's Page</a>
+    </footer>
+
+    </body>
+</html>

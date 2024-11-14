@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="userstyles.css">
+    <style>
+        .error::placeholder {
+            color: red;
+        }
+        
+    </style>
+</head>
+<body>
+    <script>
+        function validateForm() {
+            var fname = document.getElementById('fname');
+            var lname = document.getElementById('lname');
+            var age = document.getElementById('age');
+            var email = document.getElementById('email');
+            var password = document.getElementById('pw');
+            
+            var nameValid = /^[A-Za-z]+$/.test(fname.value) && /^[A-Za-z]+$/.test(lname.value);
+            var ageValid = age.value >= 10 && age.value <= 100;
+            var emailValid = email.value.endsWith('@gmail.com');
+            var allFieldsFilled = fname.value && lname.value && age.value && email.value && password.value;
+            
+            if (!allFieldsFilled) {
+                showModal('Please fill in all required fields.');
+                return;
+            }
+
+            if (!nameValid) {
+                fname.value = '';
+                fname.placeholder = "Invalid name";
+                lname.value = '';
+                lname.placeholder = "Invalid name";
+                fname.classList.add('error');
+                lname.classList.add('error');
+                showModal('Name must contain only letters ! ');
+                return;
+            } else {
+                fname.classList.remove('error');
+                lname.classList.remove('error');
+            }
+
+            if (!ageValid) {
+                age.value = '';
+                age.placeholder = "Invalid age";
+                age.classList.add('error');
+                showModal('Age must be between 10 and 100 ! ');
+                return;
+            } else {
+                age.classList.remove('error');
+            }
+
+            if (!emailValid) {
+                email.value = '';
+                email.placeholder = "Invalid gmail";
+                email.classList.add('error');
+                showModal('Invalid gmail address !');
+                return;
+            } else {
+                email.classList.remove('error');
+            }
+
+            if (allFieldsFilled && nameValid && ageValid && emailValid) {
+                document.getElementById('modalText').innerText = `Dear ${fname.value}, thank you for Signing Up with us!`;
+                document.getElementById('myModal').style.display = "block";
+            }
+        }
+
+        function showModal(message) {
+            document.getElementById('validationText').innerText = message;
+            document.getElementById('validationModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+            window.location.href = 'index.html';
+        }
+
+        function closeValidationModal() {
+            document.getElementById('validationModal').style.display = "none";
+        }
+    </script>
+
+    <header>
+        <section id="header">
+            <img src="images\logo.jpg" width="80px" height="80px" alt="logo">
+            <h2>BuyAnything.com</h2>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="buyproduct.html">Shop</a></li>
+                    <li><a href="listingPage.html">Reviews</a></li>
+                    <li><a href="Query.html">Query</a></li>
+                    <li><a href="Quiz.html">Quiz</a></li>
+                   <li><a href="gallerypg.html">Gallery</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li><a href="signinpg.html"><i class="fa fa-user-o"></i><span> SignIn</span></a></li>
+                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i><span> Cart</span></a></li>
+                </ul>
+            </div>
+        </section>
+       </header>
+    <br><br><br>
+
+    <main class="form">
+        <h2> Create an account </h2>
+        <br>
+        <form id="accountForm">
+            <input type="text" id="fname" name="fname" placeholder="first name">
+            <input type="text" id="lname" name="lname" placeholder="last name"><br><br>
+            <input type="text" id="age" name="age" placeholder="age"><br><br>
+            <input type="text" id="email" name="email" placeholder="email"><br><br>
+            <input type="password" name="password" id="pw" placeholder="Password"> <br><br>
+            <h3> Tell us more about yourself </h3>
+            <select class="userPref" id="brand" name="brand">
+                <option value="" disabled selected>Favourite Brand</option>
+                <option value="gucci">Gucci</option>
+                <option value="LV">Louis Vuitton</option>
+                <option value="nike">Nike</option>
+                <option value="adidas">Adidas</option>
+                <option value="kylie">Kylie</option>
+            </select>
+            <select class="userPref" id="features" name="features">
+                <option value="" disabled selected>What are you looking for ?</option>
+                <option value="gq">Good Quality</option>
+                <option value="affordable">Affordable</option>
+                <option value="ef">Environment friendly</option>
+                <option value="eco">Eco Friendly</option>
+                <option value="natty">Natural</option>
+            </select>
+            <select class="userPref" id="categories" name="categories">
+                <option value="" disabled selected>Preferred Categories</option>
+                <option value="mclothes">Men's clothes</option>
+                <option value="fclothes">Women's clothes</option>
+                <option value="cosmetics">Cosmetics</option>
+                <option value="skincare">Skin care</option>
+                <option value="accessories">Accessories</option>
+                <option value="footwear">Footwear</option>
+            </select>
+            <br><br><br><br>
+            <button type="button" onclick="validateForm()" id="createaccount">Create Account</button>
+            <button type="reset">Refresh Form</button><br>
+            <p id="ahac">Already have an account?</p>
+            <a href="signinpg.html" id="ahaclogin">Log in</a><br><br>
+        </form><br>
+    </main><br><br><br>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content"> 
+            <p id="modalText"></p>
+            <button class="close-btn" onclick="closeModal()">Okay</button>
+        </div>
+    </div>
+
+    <div id="validationModal" class="modal">
+        <div class="modal-content">
+            <p id="validationText"></p>
+            <button class="close-btn" onclick="closeValidationModal()">Okay</button>
+        </div>
+    </div>
+
+    <footer class="footer" style="text-align: center;">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">Women's Clothes</a></li>
+                        <li><a href="#">Men's Clothes</a></li>
+                        <li><a href="#">Foot Ware</a></li>
+                        <li><a href="#">Cosmetics</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 AI Application. All rights reserved.</p>
+        <a href="editorspgAaqib.html">Editor's Page</a>
+    </footer>
+
+</body>
+</html>

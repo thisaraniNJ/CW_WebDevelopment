@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buy Products</title>
+    <!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="styleEhansa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="stylethisarani.css">
+</head>
+<body>
+
+    <header>
+        <section id="header">
+            <img src="images\logo.jpg" width="80px" height="80px" alt="logo">
+            <h2>BuyAnything.com</h2>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="buyproduct.html" class="active">Shop</a></li>
+                    <li><a href="listingPage.html">Reviews</a></li>
+                    <li><a href="Query.html">Query</a></li>
+                    <li><a href="Quiz.html">Quiz</a></li>
+                    <li><a href="gallerypg.html">Gallery</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li><a href="signinpg.html"><i class="fa fa-user-o"></i><span> SignIn</span></a></li>
+                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i><span> Cart</span></a></li>
+                </ul>
+            </div>
+        </section>
+    </header>  
+       <br>
+       <hr>
+
+    <section id="prodetails" class="section-p1">
+        <div class="single-pro-image">
+            <img src="images/highlight palette/Lottie London Shimmer Squad Highlight Palette1.jpg" alt="highlight palette" , id="MainImg">
+
+            <div class="small-img-group">
+                <div class="small-img-col">
+                    <img src="images/highlight palette/Lottie London Shimmer Squad Highlight Palette1.jpg" width="100%" class="small-img" alt="highlight palette1">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/highlight palette/Lottie London Shimmer Squad Highlight Palette2.jpg" width="100%" class="small-img" alt="highlight palette2">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/highlight palette/Lottie London Shimmer Squad Highlight Palette3.jpg" width="100%" class="small-img" alt="highlight palette3">
+                </div>
+                <div class="small-img-col">
+                    <img src="images/highlight palette/Lottie London Shimmer Squad Highlight Palette4.jpg" width="100%" class="small-img" alt="highlight palette3">
+                </div>
+                
+            </div>
+        </div>
+        <div class="single-pro-details">
+            <h6>Home / Shop / Cosmetics</h6>
+            <h2>Lottie London Shimmer Squad Highlight Palette</h2>
+            <h2>Rs3,850</h2>
+            <select>
+                <option>Select Size</option>
+                <option>One size</option>
+               
+            </select>
+            
+            <input type="number" value="1" min="1">
+            <button class="button">Add To Cart</button>
+            <h4>Product Details</h4>
+            <span>Featuring four natural ultra-blendable powder highlighters that will strobe and illuminate all skin tones. Apply directly to cheekbones, brow bones, cupid's bow and wherever the light naturally catches the face to add instant luminosity and glow to your complexion.
+
+                <b>Ingredients/Size</b><br>
+                Vegan<br><br>
+                
+                The Good Girl<br><br>
+                
+                Mica, Talc, Synthetic Fluorphlogopite, Magnesium Stearate, Dimethicone, Ethylhexyl Palmitate, Polyisobutene, Synthetic Wax, Phenoxyethanol, Mineral Oil (Paraffinum Liquidum), Tin Oxide, Ethylhexylglycerin [May contain / Peut Contenir / +/-: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI 77499)]
+                <br><br>
+                
+                The Flirt<br><br>
+                
+                Mica, Talc, Magnesium Stearate, Dimethicone, Ethylhexyl Palmitate, Polyisobutene, Synthetic Wax, Phenoxyethanol, Mineral Oil (Paraffinum Liquidum), Tin Oxide, Ethylhexylglycerin [May contain / Peut Contenir / +/-: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI 77499)]
+                <br><br>
+
+                The Troublemaker
+                <br><br>
+                
+                Mica, Talc, Magnesium Stearate, Dimethicone, Synthetic Fluorphlogopite, Ethylhexyl Palmitate, Polyisobutene, Synthetic Wax, Phenoxyethanol, Mineral Oil (Paraffinum Liquidum), Ethylhexylglycerin [May contain / Peut Contenir / +/-: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI 77499)]
+                <br><br>
+
+                The Queen Bee
+                <br><br>
+                Mica, Talc, Magnesium Stearate, Dimethicone, Synthetic Fluorphlogopite, Ethylhexyl Palmitate, Polyisobutene, Synthetic Wax, Phenoxyethanol, Mineral Oil (Paraffinum Liquidum), Tin Oxide, Ethylhexylglycerin [May contain / Peut Contenir / +/-: Titanium Dioxide (CI 77891), Iron Oxides (CI 77491, CI 77492, CI 77499)]
+
+
+
+                </span>
+               
+      
+    </section>
+
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="shoppingCartTitle" class="title">Shopping Cart</div>
+            <table id="cartTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Subtotal</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Cart items will be inserted here -->
+                </tbody>
+            </table>
+            <div class="total">Total: Rs<span id="cartTotal">0</span></div>
+            <button id="proceedToCart">Proceed to Cart</button>
+            <button id="continueShopping">Continue Shopping</button>
+        </div>
+    </div>
+    
+    
+    <script src="js.js"></script>
+
+    <br>
+       <br>
+       <footer class="footer" style="text-align: center;">
+        
+        <div class="containerfooter">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="About Us.html">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="womenitems.html">Women's Clothes</a></li>
+                        <li><a href="menitems.html">Men's Clothes</a></li>
+                        <li><a href="footwearitems.html">Footwear</a></li>
+                        <li><a href="cosmeticitems.html">Cosmetics</a></li>
+                        <li><a href="accessoryitems.html">Accessories</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa fa-facebook-f"></i><span class="sr-only">Facebook</span></a>
+                        <a href="#"><i class="fa fa-twitter"></i><span class="sr-only">Twitter</span></a>
+                        <a href="#"><i class="fa fa-instagram"><span class="sr-only">Instagram</span></i></a>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 AI Application. All rights reserved.</p>
+        <a href="editorEhansa.html" target="_blank">Editor's Page</a>
+    </footer>
+
+    
+</body>
+</html>

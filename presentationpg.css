@@ -1,0 +1,31 @@
+body {
+    background: linear-gradient(to right, #3c0c0c, #2e003e, #c71585, #000000, #3c0c0c);
+    background-size: 200% 100%; /* Makes the background gradient cover twice the width */
+    background-clip: border-box; /* Ensures background does not clip */
+    animation: gradientEffect 20s linear infinite;
+    margin: 0; /* Ensure no margin around body */
+    height: 100vh; /* Make sure the body takes up full viewport height */
+}
+
+@keyframes gradientEffect {
+    0% {
+        background-position: 0% 0%; /* Start from the left */
+    }
+    50% {
+        background-position: 100% 0%; /* Move to the right */
+    }
+    100% {
+        background-position: 0% 0%; /* Return to the start */
+    }
+}
+
+header, main {
+    text-align: center;
+    color: #000; /* Ensure text is visible, you can adjust the color */
+    font-family: 'Times New Roman', Times, serif; /* Or any other preferred font-family */
+}
+
+header img {
+    width: 160px;
+    height: 160px;
+}

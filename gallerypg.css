@@ -1,0 +1,158 @@
+h1{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body header,nav{
+    font-family:'Times New Roman', Times, serif;
+}
+
+header,footer{
+    text-align:center;
+    margin-top: 1px;
+    padding: 0 0; 
+    
+}
+.choose{
+    background-color:white;
+    overflow: hidden;
+    text-align: center;
+}
+
+.choose ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.choose li{
+    display: inline;
+    margin: 0 10px;
+}
+
+.choose li a{
+    display: inline-block;
+    color:white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+    background-color:darkred;
+    border-radius: 5px;
+
+}
+
+.choose li a:hover:not(.active){
+    background-color:darkcyan;
+}
+
+.choose li a:not(.active){
+    background-color:darkblue;
+}
+.choose li a:active{
+    background-color: rgb(5, 76, 76);
+    color:black;
+    
+}
+#logo{
+    float:left;
+    width:150px ;
+    height:150px;
+}
+
+
+
+.thumbnails {
+	background-color:black;
+	padding:30px;
+}
+.thumbnails img {
+    width: 200px;
+    margin: 5px;
+    cursor: pointer;
+	border-radius:10px;
+	padding:7px;
+}
+.thumbnails img:hover{
+	border:10px solid #BC8F8F;
+	border-radius:40px;
+}
+.large-image{
+	border:10px solid black;
+	border-radius:30px;
+	padding:20px;
+}
+.large-image img {
+    width: 500px;
+	border-radius:20%;
+}
+#imageDescription {
+	float:right;
+	position:relative;
+	right:350px;
+}
+.iteamheader {
+	border:4px solid black;
+	border-radius:25px;
+	padding:10px;
+	text-align:center;
+	font-family: 'Times New Roman', serif;
+	background-color:#F0F8FF;
+}
+.background {
+    width: 500px;
+    text-align: justify;
+}
+main {
+	margin:20px;
+}
+.hidden {
+        display: none;
+}
+.linktoeditorspage {
+	text-decoration:none;
+	border:2px solid black;
+	padding:5px 15px 5px 15px;
+	border-radius:20px;
+	color:black;
+}
+.linktoeditorspage:hover {
+	background-color:black;
+	color:white;
+}
+.redirect {
+	font-size:20px;
+	border:4px solid black;
+	border-radius:25px;
+	padding:10px 15px 10px 15px;
+	background-color:black;
+	color:white;
+}
+.redirect:hover {
+	background-color:white;
+	color:black;
+}
+#animation {
+    font-family: serif;
+    color: transparent;
+    text-align: center;
+    animation: effect 20s linear infinite;
+    background: linear-gradient(to right, #3c0c0c, #2e003e, #c71585, #000000, #3c0c0c);
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 200% 100%; /* Makes the background gradient cover twice the width */
+}
+@keyframes effect {
+    0% {
+        background-position: 0% 0%; /* Start from the left */
+    }
+    50% {
+        background-position: 100% 0%; /* Move to the right */
+    }
+    100% {
+        background-position: 0% 0%; /* Return to the start */
+    }
+}
+
+
+
+

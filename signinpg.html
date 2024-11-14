@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="userstyles.css">
+    
+</head>
+
+<body>
+
+    <script>
+        function validateForm() {
+            var email = document.getElementById('email');
+            var fname = document.getElementById('fnameinsigninpg');
+            var password = document.getElementById('pw');
+            var emailValid = email.value.endsWith('@gmail.com');
+            var nameValid = /^[A-Za-z]+$/.test(fname.value);
+            var allFieldsFilled = email.value && fname.value && password.value;
+
+            if (!allFieldsFilled) {
+                showModal('Please fill all the fields !');
+                return;
+            }
+
+            if (!nameValid) {
+                fname.value = '';
+                fname.placeholder = "Invalid username";
+                fname.classList.add('error');
+                showModal('Invalid username !');
+                return;
+            } else {
+                fname.classList.remove('error');
+            }
+
+            if (!emailValid) {
+                email.value = '';
+                email.placeholder = "Invalid gmail";
+                email.classList.add('error');
+                showModal('Please enter a valid gmail address !');
+                return;
+            } else {
+                email.classList.remove('error');
+            }
+
+            if (allFieldsFilled && emailValid && nameValid) {
+                document.getElementById('modalText').innerText = `You have now logged in as ${fname.value}, You may proceed`;
+                document.getElementById('myModal').style.display = "block";
+            }
+        }
+
+        function showModal(message) {
+            document.getElementById('validationText').innerText = message;
+            document.getElementById('validationModal').style.display = "block";
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+            window.location.href = 'index.html';
+        }
+
+        function closeValidationModal() {
+            document.getElementById('validationModal').style.display = "none";
+        }
+    </script>
+
+    <header>
+        <section id="header">
+            <img src="images\logo.jpg" width="80px" height="80px" alt="logo">
+            <h2>BuyAnything.com</h2>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="buyproduct.html">Shop</a></li>
+                    <li><a href="listingPage.html">Reviews</a></li>
+                    <li><a href="Query.html">Query</a></li>
+                    <li><a href="Quiz.html">Quiz</a></li>
+                   <li><a href="gallerypg.html">Gallery</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li><a href="signinpg.html"><i class="fa fa-user-o"></i><span> SignIn</span></a></li>
+                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i><span> Cart</span></a></li>
+                </ul>
+            </div>
+        </section>
+       </header>
+    <br>
+
+    <br>
+    <br>
+
+    <main class="form">
+
+        <h2> Sign in to your account </h2>
+
+        <br>
+
+        <form id="accountForm">
+
+            <input type="text" id="fnameinsigninpg" name="firstname" placeholder="first name"> <br><br>
+
+            <input type="text" id="email" name="email" placeholder="email"><br><br>
+
+            <input type="password" name="password" id="pw" placeholder="Password"> <br><br>
+
+            <button type="button" onclick="validateForm()" id="createaccount">log in</button>
+            <button type="reset">Refresh Form</button><br>
+
+            <p id="dhac"> Don't have an account ? </p>
+            <a href="signuppg.html" id="dhaccreate"> create an account </a><br><br>
+
+        </form><br>
+
+    </main>
+    <br><br><br>
+
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <p id="modalText"></p>
+            <button class="close-btn" onclick="closeModal()">Okay</button>
+        </div>
+    </div>
+
+    <div id="validationModal" class="modal">
+        <div class="modal-content">
+            <p id="validationText"></p>
+            <button class="close-btn" onclick="closeValidationModal()">Okay</button>
+        </div>
+    </div>
+
+    <footer class="footer" style="text-align: center;">
+
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">Women's Clothes</a></li>
+                        <li><a href="#">Men's Clothes</a></li>
+                        <li><a href="#">Foot Ware</a></li>
+                        <li><a href="#">Cosmetics</a></li>
+                        <li><a href="#">Accessories</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 AI Application. All rights reserved.</p>
+        <a href="editorspgAaqib.html">Editor's Page</a>
+    </footer>
+
+</body>
+
+</html>

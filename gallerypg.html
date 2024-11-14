@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - BuyAnything.com</title>
+    <link rel="stylesheet" href="gallerypg.css">
+    <link rel="stylesheet" href="stylethisarani.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <script>
+        let currentUrl = '';
+
+        function displayImage(imageSrc, productDetails) {
+            const largeImageDiv = document.getElementById('largeImageDiv');
+            largeImageDiv.classList.remove('hidden');
+
+            document.getElementById('largeImage').src = imageSrc;
+            document.getElementById('imageDescription').innerHTML = `
+                <h2 class="iteamheader">${productDetails.name}</h2>
+                <p class="background"><strong>About this product <br><br></strong> ${productDetails.background}</p>
+                <br>
+                <br>
+                <button class="redirect" onclick="redirectToProduct()">View this Product</button>
+            `;
+
+            // Store the URL for redirection
+            currentUrl = productDetails.url;
+        }
+
+        function redirectToProduct() {
+            window.location.href = currentUrl;
+        }
+
+        window.onload = function () {
+            const largeImageDiv = document.getElementById('largeImageDiv');
+            largeImageDiv.classList.add('hidden');
+        }
+    </script>
+
+</head>
+
+<body class="cosmetics">
+
+    <header>
+        <section id="header">
+            <img src="images\logo.jpg" width="80px" height="80px" alt="logo">
+            <h2>BuyAnything.com</h2>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html" class="active">Home</a></li>
+                    <li><a href="buyproduct.html">Shop</a></li>
+                    <li><a href="listingPage.html">Reviews</a></li>
+                    <li><a href="Query.html">Query</a></li>
+                    <li><a href="Quiz.html">Quiz</a></li>
+                   <li><a href="gallerypg.html">Gallery</a></li>
+                    <li><a href="About Us.html">About Us</a></li>
+                    <li><a href="signinpg.html"><i class="fa fa-user-o"></i><span> SignIn</span></a></li>
+                    <li><a href="cart.html"><i class="fa fa-shopping-cart"></i><span> Cart</span></a></li>
+                </ul>
+            </div>
+        </section>
+       </header>>
+    <br>
+    <hr>
+
+    <main>
+		
+		<h2 style="text-align:center; font-size:28px;" id="animation"> Take a look at some of our best selling products </h2><br>
+
+        <div class="thumbnails">
+            <img src="images/Gallery/fclothes.jpg" alt="dress" onclick="displayImage('images/Gallery/fclothes.jpg', {name: 'Cargo Jeans', background: 'Crafted from non-stretch denim, this pair of jeans features a high-rise waist, belt loops, zip fly and dual button-front closures, slanted front pockets, leg cargo flap and zippered pockets, back flap pockets, and wide leg', url: 'sproductcargo.html'})">
+            <img src="images/Gallery/mclothes.jpg" alt="Tee" onclick="displayImage('images/Gallery/mclothes.jpg', {name: 'Embroidered Tee', background: 'A knit tee featuring an oversized fit, chain stitched abstract embroidery, short sleeves, and a crew neck', url: 'sproductembroidedtee.html'})">
+            <img src="images/Gallery/shades.jpg" alt="shades" onclick="displayImage('images/Gallery/shades.jpg', {name: 'Cat-Eye Sunglasses', background: 'A pair of high-polish cat-eye sunglasses featuring a thin design, gradient lenses, and clear nose pads', url: 'sproductsunglass.html'})">
+            <img src="images/Gallery/footwear.jpg" alt="boots" onclick="displayImage('images/Gallery/footwear.jpg', {name: 'Combat Boots', background: 'A pair of faux leather combat boots featuring an ankle length, lace-up design, back pull-tab, and a contrast lug sole', url: 'sproductgirlboots.html'})">
+            <img src="images/Gallery/cosmetics.jpg" alt="pallette" onclick="displayImage('images/Gallery/cosmetics.jpg', {name: 'Shimmer Pallette', background: 'Featuring four natural ultra-blendable powder highlighters that will strobe and illuminate all skin tones.', url: 'sproducthighlightpalette.html'})">
+			<img src="images/Gallery/lipstick.jpg" alt="lipstick" onclick="displayImage('images/Gallery/lipstick.jpg', {name: 'Feral Amour Matte', background: 'Love Triangle is a deep, sultry pink. It\'s lightweight, creamy, and long-lasting for hours of comfortable wear. You\'ll get smooth, rich, opaque color with just one swipe!', url: 'sproductglosscollection.html'})">
+
+        </div>
+
+        <br>
+
+        <div id="largeImageDiv" class="large-image hidden">
+            <img id="largeImage" src="" alt="Large Image">
+            <div id="imageDescription">
+                <!-- Initial content will be replaced by JavaScript -->
+            </div>
+        </div>
+
+    </main>
+
+    <br>
+    <br>
+    <hr>
+
+    <footer class="footer" style="text-align: center;">
+        
+        <div class="container">
+            <div class="row">
+                <div class="footer-col">
+                    <h4>company</h4>
+                    <ul>
+                        <li><a href="#">about us</a></li>
+                        <li><a href="#">our services</a></li>
+                        <li><a href="#">privacy policy</a></li>
+                        <li><a href="#">affiliate program</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>get help</h4>
+                    <ul>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">shipping</a></li>
+                        <li><a href="#">returns</a></li>
+                        <li><a href="#">order status</a></li>
+                        <li><a href="#">payment options</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>online shop</h4>
+                    <ul>
+                        <li><a href="#">Women's Clothes</a></li>
+                        <li><a href="#">Men's Clothes</a></li>
+                        <li><a href="#">Foot Ware</a></li>
+                        <li><a href="#">Cosmetics</a></li>
+                        <li><a href="#">Accessories</a></li>
+                        
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>follow us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fa fa-facebook-f"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+        <p>&copy; 2024 AI Application. All rights reserved.</p>
+        <a href="editorspgAaqib.html">Editor's Page</a>
+    </footer>
+
+</body>
+
+</html>
